@@ -1,0 +1,3 @@
+1、get_strategy_seed.py解析用户期望seed标签，或者使用默认期望获取seed标签。
+2、get_rec_strategy.py 检索倒排获取最相关策略，top标签也返回。
+3、get_explore_strategy 遗传算法探索到的策略

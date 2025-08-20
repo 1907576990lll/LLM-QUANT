@@ -1,0 +1,3 @@
+1、策略打标prompt
+2、标签python代码获取prompt
+3、用户输入期望seed代码生成prompt

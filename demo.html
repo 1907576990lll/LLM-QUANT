@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI助手演示 - 功能展示</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .feature {
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .feature h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .demo-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        .demo-button:hover {
+            transform: translateY(-2px);
+        }
+        .screenshot {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .code-block {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🤖 AI助手聊天应用演示</h1>
+        
+        <div class="feature">
+            <h3>✨ 主要功能</h3>
+            <ul>
+                <li><strong>智能对话</strong> - 支持文字和图片混合输入</li>
+                <li><strong>现代化UI</strong> - 美观的渐变背景和毛玻璃效果</li>
+                <li><strong>响应式设计</strong> - 完美适配桌面和移动端</li>
+                <li><strong>多会话管理</strong> - 支持多个对话历史</li>
+                <li><strong>本地存储</strong> - 聊天记录自动保存</li>
+            </ul>
+        </div>
+
+        <div class="feature">
+            <h3>🚀 快速开始</h3>
+            <p>选择以下任一方式启动应用：</p>
+            <a href="index.html" class="demo-button">直接打开应用</a>
+            <a href="#" onclick="startServer()" class="demo-button">启动本地服务器</a>
+        </div>
+
+        <div class="feature">
+            <h3>💡 使用说明</h3>
+            <ol>
+                <li>在输入框中输入你的问题</li>
+                <li>点击图片按钮上传图片（可选）</li>
+                <li>按Enter键或点击发送按钮</li>
+                <li>AI会智能分析并回复你的消息</li>
+                <li>支持多轮对话和上下文理解</li>
+            </ol>
+        </div>
+
+        <div class="feature">
+            <h3>🔧 技术特性</h3>
+            <div class="code-block">
+// 支持图片上传和预览
+function handleImageUpload(event) {
+    const files = event.target.files;
+    if (files.length > 0) {
+        // 自动处理图片文件
+        console.log('图片已选择:', files.length, '个文件');
+    }
+}
+
+// 智能AI响应
+async function generateAIResponse(chat, userMessage) {
+    // 根据用户输入智能生成回复
+    let responseText = "我理解你的问题...";
+    
+    if (userMessage.images.length > 0) {
+        responseText = "我看到了你上传的图片！" + responseText;
+    }
+    
+    return responseText;
+}
+            </div>
+        </div>
+
+        <div class="feature">
+            <h3>📱 响应式设计</h3>
+            <p>应用采用现代化的响应式设计，在不同设备上都能提供优秀的用户体验：</p>
+            <ul>
+                <li>桌面端：完整的侧边栏和主聊天区域</li>
+                <li>平板端：优化的布局和触摸友好的界面</li>
+                <li>手机端：紧凑的布局，隐藏侧边栏</li>
+            </ul>
+        </div>
+
+        <div class="feature">
+            <h3>🎨 自定义主题</h3>
+            <p>你可以轻松自定义应用的主题颜色和样式：</p>
+            <div class="code-block">
+/* 修改主题颜色 */
+:root {
+    --primary-color: #667eea;    /* 主色调 */
+    --secondary-color: #764ba2;  /* 辅助色 */
+    --text-color: #333;          /* 文字颜色 */
+    --bg-color: #f8f9fa;        /* 背景色 */
+}
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="demo-button">🎯 立即体验</a>
+            <a href="README.md" class="demo-button">📖 查看文档</a>
+        </div>
+    </div>
+
+    <script>
+        function startServer() {
+            alert('请在终端中运行以下命令启动服务器：\n\ncd ~/Desktop/ai-chat-app\n./start.sh\n\n或者直接打开 index.html 文件');
+        }
+    </script>
+</body>
+</html>
